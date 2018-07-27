@@ -1,6 +1,34 @@
 # git之基础篇
+### 初始化仓库
 
-### github
+`git init`
+初始化一个git，初始完git后，如果你是window 用户，你会在目录里看到一个`.git`文件夹，这就说明本地初始化git成功了，然后输入
+```js
+git add readme.md
+```
+给git添加文件readme.md,添加完之后，需要进行托付，并写明托付的原因：
+
+```js
+git commit -m '这里输入添加的托付'
+```
+
+其中`-m`后面的`' '`  就是你写的托付原因，当然也是支持汉语的，接下来就是，添加远程仓库：（注意后面的链接是你创建github项目时，自动生成的）
+
+```js
+git remote add origin https://github.com/Arison/gitBase.git
+```
+
+添加完远程仓库分支后，接下来就是提交这个分支了：
+
+```js
+git push -u origin master
+```
+
+提交的时候回要求你输入你账号和密码，如果没有要求也无关紧要，输入完成以后到我们的项目里看，它就创建成功过了。
+
+##### 这种方式，是先初始化本地git，再把git提交成远程分支的，接下来我们来看另外一种本地化方式。
+
+### github篇的关联
 
 - https://github.com
 
@@ -19,3 +47,5 @@
  ##### 通过`Use ssh` 上传或者下载服务端的代码
  - 生成公钥、私钥
  - + 在命令行输入   `ssh-keygen -t rsa -C '邮箱'` 一直回车后，没意外就在本地电脑创建了`.ssh` ,路径是：C:\Users\Administrator\.ssh 里面有两个文件，`.pub`后缀结尾的是公钥，`.rsa`后缀结尾的是私钥。讲公钥文件打开，复制粘贴到github 中settings 里面
+#### 在push和pull 操作进行时，先pull ,再push
+- 当我们在push时，加上-u 参数，那么在下一次push 时，我们只需要写上`git push`就能上传我们的代码了（加上-u 之后，git 就会把当前的分支和远程指定的分支进行关联。git push origin master）
