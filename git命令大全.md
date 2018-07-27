@@ -127,4 +127,124 @@ rm fileName
 ##### 回滚版本
 
 - 回滚最近的一个版本`git log`
-- 
+
+  ```js
+  git reset --hard HEAD commit_id
+  ```
+
+  ##### 回滚到未来
+
+  ```js
+  git reflog
+  ```
+
+  ### 分支管理
+
+  ##### 创建分支
+
+  ```js
+  git branch dev
+  ```
+
+  ##### 切换分支
+
+  ```js
+  git checkout dev
+  ```
+
+  ##### 创建分支并切换分支
+
+  ```js
+  git checkout -b dev
+  ```
+
+  ##### 删除分支
+
+  ```js
+  git branch -d dev
+  ```
+
+  ##### 在分支上提交新的版本
+
+  ```js
+  git commit -a -m '提交的信息说明'
+  ```
+
+  ##### 合并分支
+
+  ```js
+  git merge dev
+  ```
+
+  ##### 分支的合并后显示log
+
+  ```js
+  git log --oneline --graph --decorate
+  ```
+
+  ##### 在分支开发的过程中遇到其他问题乣切换其他分支
+
+  - 保留写好的内容在切换到主干
+  - 保留内容
+
+  ```js
+  git stash
+  ```
+
+  ##### 再次切换分支后需要应用一下保留的内容
+
+  ```js
+  git stash apply
+  ```
+
+  ##### 丢掉保存的内容
+
+  ```js
+  git stash drop
+  ```
+
+  ##### 使用并丢掉
+
+  ```js
+  git stash pop
+  ```
+
+  ##### 最佳分支
+
+  - 有的时候开发需要合并指定的内容，而不是合并所有的提交，所以我们需要挑选最好的，自己生产的版本
+
+  ##### 合并分支把树杈搬到主干上
+
+  ```js
+  git rebase
+  ```
+
+  ### 添加远程的仓库
+
+  ##### push  -u
+
+  -u 参数 upstream
+
+  ```js
+  git  push origin master -u  //获取最新代码
+  ```
+
+  ##### 连接远程仓库
+
+  ```js
+  git remote add origin 仓库的地址
+  ```
+
+  ##### 查看远程仓库
+
+  ```js
+  git remote -v
+  ```
+
+  ##### 删除远程仓库
+
+  ```js
+  git remote rm origin
+  ```
+
+  
